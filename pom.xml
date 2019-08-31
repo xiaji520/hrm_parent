@@ -11,6 +11,8 @@
     <modules>
         <module>hrm_support_parent</module>
         <module>hrm_basic_parent</module>
+        <module>hrm_sysmanage_parent</module>
+        <module>hrm_mybatisplus_gen</module>
     </modules>
 
     <properties>

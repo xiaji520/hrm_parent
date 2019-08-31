@@ -1,26 +1,27 @@
 package cn.xiaji.hrm;
 //encoding: utf-8
 
+
+import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
-import org.springframework.cloud.netflix.zuul.EnableZuulProxy;
 
 /**
  * @author: xj
  * @contact: xiaruji520@gmail.com
- * @file: GateWay9527Application.java
+ * @file: SysManage9001Application.java
  */
 /*
 
  */
 @SpringBootApplication
 @EnableEurekaClient
-//开启网关支持
-@EnableZuulProxy
-public class GateWay9527Application {
+@MapperScan("cn.xiaji.hrm.mapper")
+public class SysManage9001Application {
     //主入口
     public static void main(String[] args) {
-        SpringApplication.run(GateWay9527Application.class, args);
+        SpringApplication.run(SysManage9001Application.class, args);
+
     }
 }

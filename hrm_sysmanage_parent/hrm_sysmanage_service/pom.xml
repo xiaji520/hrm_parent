@@ -3,34 +3,46 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <parent>
-        <artifactId>hrm_support_parent</artifactId>
+        <artifactId>hrm_sysmanage_parent</artifactId>
         <groupId>cn.xiaji.hrm</groupId>
         <version>1.0-SNAPSHOT</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>hrm_zuul_9527</artifactId>
+    <artifactId>hrm_sysmanage_service</artifactId>
 
     <dependencies>
-        <!-- springBoot 支持 -->
+        <!--依赖于 hrm_sysmanage_interface-->
+        <dependency>
+            <groupId>cn.xiaji.hrm</groupId>
+            <artifactId>hrm_sysmanage_interface</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
+        <!--所有provider公共依赖-->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
         </dependency>
-        <!-- springboot 测试 -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-test</artifactId>
+            <scope>test</scope>
         </dependency>
         <!-- Eureka 客户端依赖 -->
         <dependency>
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
         </dependency>
-        <!-- zuul 支持-->
+        <!--mybatis-plus支持-->
         <dependency>
-            <groupId>org.springframework.cloud</groupId>
-            <artifactId>spring-cloud-starter-netflix-zuul</artifactId>
+            <groupId>com.baomidou</groupId>
+            <artifactId>mybatis-plus-boot-starter</artifactId>
+            <version>2.2.0</version>
+        </dependency>
+        <!--数据库支持-->
+        <dependency>
+            <groupId>mysql</groupId>
+            <artifactId>mysql-connector-java</artifactId>
         </dependency>
         <!--引入swagger支持-->
         <dependency>
