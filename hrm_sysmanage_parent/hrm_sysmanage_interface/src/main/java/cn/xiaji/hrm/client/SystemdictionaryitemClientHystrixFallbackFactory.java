@@ -12,7 +12,7 @@ import java.util.List;
 /**
  *
  * @author xiaji
- * @since 2019-08-31
+ * @since 2019-09-01
  */
 @Component
 public class SystemdictionaryitemClientHystrixFallbackFactory implements FallbackFactory<SystemdictionaryitemClient> {

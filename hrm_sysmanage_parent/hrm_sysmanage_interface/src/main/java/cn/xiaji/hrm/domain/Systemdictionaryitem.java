@@ -5,16 +5,14 @@ import com.baomidou.mybatisplus.annotations.TableId;
 import com.baomidou.mybatisplus.annotations.TableField;
 import com.baomidou.mybatisplus.activerecord.Model;
 import com.baomidou.mybatisplus.annotations.TableName;
-
 import java.io.Serializable;
 
 /**
  * <p>
- *
+ * 
  * </p>
- *
  * @author xiaji
- * @since 2019-08-31
+ * @since 2019-09-01
  */
 @TableName("t_systemdictionaryitem")
 public class Systemdictionaryitem extends Model<Systemdictionaryitem> {
@@ -78,12 +76,12 @@ public class Systemdictionaryitem extends Model<Systemdictionaryitem> {
     @Override
     public String toString() {
         return "Systemdictionaryitem{" +
-                "id=" + id +
-                ", parentId=" + parentId +
-                ", name=" + name +
-                ", requence=" + requence +
-                ", intro=" + intro +
-                "}";
+        "id=" + id +
+        ", parentId=" + parentId +
+        ", name=" + name +
+        ", requence=" + requence +
+        ", intro=" + intro +
+        "}";
 
     }
 }

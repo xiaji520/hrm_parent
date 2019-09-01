@@ -4,16 +4,14 @@ import com.baomidou.mybatisplus.enums.IdType;
 import com.baomidou.mybatisplus.annotations.TableId;
 import com.baomidou.mybatisplus.activerecord.Model;
 import com.baomidou.mybatisplus.annotations.TableName;
-
 import java.io.Serializable;
 
 /**
  * <p>
- *
+ * 
  * </p>
- *
  * @author xiaji
- * @since 2019-08-31
+ * @since 2019-09-01
  */
 @TableName("t_systemdictionary")
 public class Systemdictionary extends Model<Systemdictionary> {
@@ -76,12 +74,12 @@ public class Systemdictionary extends Model<Systemdictionary> {
     @Override
     public String toString() {
         return "Systemdictionary{" +
-                "id=" + id +
-                ", sn=" + sn +
-                ", name=" + name +
-                ", intro=" + intro +
-                ", state=" + state +
-                "}";
+        "id=" + id +
+        ", sn=" + sn +
+        ", name=" + name +
+        ", intro=" + intro +
+        ", state=" + state +
+        "}";
 
     }
 }
