@@ -19,16 +19,17 @@ public class SystemdictionaryitemController {
 
     /**
      * 保存和修改公用的
+     *
      * @param systemdictionaryitem 传递的实体
      * @return Ajaxresult转换结果
      */
     @PutMapping
     public AjaxResult save(@RequestBody Systemdictionaryitem systemdictionaryitem) {
         try {
-            if (systemdictionaryitem.getId() != null){
-                    systemdictionaryitemService.updateById(systemdictionaryitem);
-            }else{
-                    systemdictionaryitemService.insert(systemdictionaryitem);
+            if (systemdictionaryitem.getId() != null) {
+                systemdictionaryitemService.updateById(systemdictionaryitem);
+            } else {
+                systemdictionaryitemService.insert(systemdictionaryitem);
             }
             return AjaxResult.me();
         } catch (Exception e) {
@@ -38,14 +39,15 @@ public class SystemdictionaryitemController {
     }
 
     /**
-    * 删除对象信息
-    * @param id
-    * @return
-    */
+     * 删除对象信息
+     *
+     * @param id
+     * @return
+     */
     @DeleteMapping("/{id}")
     public AjaxResult delete(@PathVariable("id") Long id) {
         try {
-                systemdictionaryitemService.deleteById(id);
+            systemdictionaryitemService.deleteById(id);
             return AjaxResult.me();
         } catch (Exception e) {
             e.printStackTrace();
@@ -61,20 +63,31 @@ public class SystemdictionaryitemController {
 
 
     /**
-    * 查看所有的员工信息
-    * @return
-    */
+     * 查看所有的员工信息
+     *
+     * @return
+     */
     @PatchMapping
     public List<Systemdictionaryitem> list() {
         return systemdictionaryitemService.selectList(null);
     }
 
+    /**
+     * 查看所有的员工信息
+     *
+     * @return
+     */
+    @GetMapping("/sn")
+    public List<Systemdictionaryitem> listByParentSn(String sn) {
+        return systemdictionaryitemService.listByParentSn(sn);
+    }
 
     /**
-    * 分页查询数据
-    * @param query 查询对象
-    * @return PageList 分页对象
-    */
+     * 分页查询数据
+     *
+     * @param query 查询对象
+     * @return PageList 分页对象
+     */
     @PostMapping
     public PageList<Systemdictionaryitem> json(@RequestBody SystemdictionaryitemQuery query) {
         Page<Systemdictionaryitem> page = new Page<Systemdictionaryitem>(query.getPage(), query.getRows());
