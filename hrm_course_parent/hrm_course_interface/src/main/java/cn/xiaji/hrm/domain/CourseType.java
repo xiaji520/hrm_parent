@@ -8,7 +8,9 @@ import com.baomidou.mybatisplus.annotations.TableName;
 import com.fasterxml.jackson.annotation.JsonFormat;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 /**
  * <p>
@@ -58,6 +60,9 @@ public class CourseType extends Model<CourseType> {
      */
     private Integer totalCount;
 
+    //用来存放儿子
+    @TableField(exist = false)
+    private List<CourseType> children = new ArrayList<>();
 
     public Long getId() {
         return id;
@@ -154,6 +159,14 @@ public class CourseType extends Model<CourseType> {
         return this.id;
     }
 
+    public List<CourseType> getChildren() {
+        return children;
+    }
+
+    public void setChildren(List<CourseType> children) {
+        this.children = children;
+    }
+
     @Override
     public String toString() {
         return "CourseType{" +
@@ -170,4 +183,5 @@ public class CourseType extends Model<CourseType> {
                 "}";
 
     }
+
 }

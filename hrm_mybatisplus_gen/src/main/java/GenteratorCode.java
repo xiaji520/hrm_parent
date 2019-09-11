@@ -15,7 +15,7 @@ public class GenteratorCode {
 
     public static void main(String[] args) throws InterruptedException {
         //用来获取Mybatis-Plus.properties文件的配置信息
-        ResourceBundle rb = ResourceBundle.getBundle("mybatisplus-course");
+        ResourceBundle rb = ResourceBundle.getBundle("mybatisplus-page");
         AutoGenerator mpg = new AutoGenerator();
         // 全局配置
         GlobalConfig gc = new GlobalConfig();
@@ -41,7 +41,7 @@ public class GenteratorCode {
         StrategyConfig strategy = new StrategyConfig();
         strategy.setTablePrefix(new String[] { "t_" });// 此处可以修改为您的表前缀
         strategy.setNaming(NamingStrategy.underline_to_camel);// 表名生成策略
-        strategy.setInclude(new String[]{"t_course_detail", "t_course","t_course_market","t_course_resource"}); // 需要生成的表
+        strategy.setInclude(new String[]{"t_page_config", "t_pager","t_site"}); // 需要生成的表
         mpg.setStrategy(strategy);
         // 包配置
         PackageConfig pc = new PackageConfig();
@@ -104,14 +104,14 @@ public class GenteratorCode {
         focList.add(new FileOutConfig("/templates/client.java.vm") {
             @Override
             public String outputFile(TableInfo tableInfo) {
-                return rb.getString("InterfaceOutputDirBase")+ "/cn/xiaji/hrm/client/" + tableInfo.getEntityName() + "Client.java";
+                return rb.getString("ClientOutputDirBase")+ "/cn/xiaji/hrm/client/" + tableInfo.getEntityName() + "Client.java";
             }
         });
         // 调整 ClientHystrixFallbackFactory 生成目录演示
         focList.add(new FileOutConfig("/templates/ClientHystrixFallbackFactory.java.vm") {
             @Override
             public String outputFile(TableInfo tableInfo) {
-                return rb.getString("InterfaceOutputDirBase")+ "/cn/xiaji/hrm/client/" + tableInfo.getEntityName() + "ClientHystrixFallbackFactory.java";
+                return rb.getString("ClientOutputDirBase")+ "/cn/xiaji/hrm/client/" + tableInfo.getEntityName() + "ClientHystrixFallbackFactory.java";
             }
         });
 
